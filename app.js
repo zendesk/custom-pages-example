@@ -28,13 +28,13 @@ const findOrg = async (req, res) => {
   
   if (response.ok) {
     response.json().then(data => {
-      console.log("Success Finding Org");
+      console.log('Org found by name');
       const matched_org = data.results.find(({name}) => name === req.body.organization);
       createOrUpdateUser(req, res, matched_org);
     });
   }
   else {
-    res.json({ msg: `Error finding existing org.. ${response.status}: ${response.statusText}` });
+    res.status(response.status).send({error: `Cannot find existing org: ${response.statusText}`});
   }
 };
 
@@ -56,15 +56,14 @@ const createOrgMembership = async (res, user, org) => {
   const response = await fetch(url, config);
 
   if (response.ok) {
-    res.redirect("/");
-    console.log("Success");
+    res.status(response.status).send("User and org created/updated.");
   }
   else if (response.status===422){
     console.log(`User already belongs to the organization. User/org updates complete.`);
-    res.redirect("/");
+    res.status(201).send("User and org created/updated.");
   }
   else {
-    res.json({ msg: `Error creating org membership.. ${response.status}: ${response.statusText}` });
+    res.status(response.status).send({error:`Cannot create org membership: ${response.statusText}`});
   }
 };
 
@@ -92,8 +91,7 @@ const createOrUpdateUser = async (req, res, org) => {
       createOrgMembership(res, data.user.id, org.id);
     });
   } else {
-    res.json({ msg: `Error creating/updating user.. ${response.status}: ${response.statusText}` });
- 
+    res.status(response.status).send({error:`Cannot create/update user: ${response.statusText}`});
   }
 };
 
@@ -119,11 +117,11 @@ const createOrUpdateOrg = async (req, res) => {
   } 
   else if (response.status===422){
     // Find the existing org by name if it already exists
-    console.log(`Error creating org.. ${response.status}: ${response.statusText}...finding existing org by name`);
+    console.log(`Error creating org...${response.status}: ${response.statusText}...finding existing org by name`);
     findOrg(req, res);
   }
   else {
-    res.json({ msg: `Error creating org.. ${response.status}: ${response.statusText}` });
+    res.status(response.status).send({error:`Cannot create org: ${response.statusText}`});
   }
 };
 
