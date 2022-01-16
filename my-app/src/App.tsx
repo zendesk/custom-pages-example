@@ -1,15 +1,19 @@
 import React from 'react';
 import './App.css';
 import Modal from './components/Modal';
-import Bot from './components/Bot';
-import Person from './components/Person';
+import Bot from './SVGs/Bot';
+import Person from './SVGs/Person';
 import Testimonials from './components/Testimonials';
+import Facebook from './SVGs/FB';
+import LinkedIn from './SVGs/LinkedIn';
+import Twitter from './SVGs/Twitter';
+import Github from './SVGs/Github';
 
 function App() {
   return (
     <div className="bg-[#E4F0D6]">
-      <div className="min-h-screen flex flex-wrap mx-auto max-w-[800px]">
-        <div className="grid grid-cols1 md:grid-cols-2 gap-8 w-full">
+      <div className="min-h-screen flex flex-wrap mx-auto max-w-screen-md">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
           <div className="font-sans text-[#050138] grid-rows-3 text-center mx-20 md:m-4 space-y-4 order-2 md:order-1 col-span-2 md:col-span-1">
             <div className="text-2xl justify-center font-semibold">
               Sign-up for VIP support
@@ -76,7 +80,7 @@ function App() {
             </div>
             <div className="pt-5">
               <button
-                className="bg-[#16494D] rounded-sm text-sm text-white py-2 px-4"
+                className="bg-[#16494D] rounded-sm text-sm text-white py-2 px-4 hover:shadow-xl hover:-translate-y-0.5"
                 onClick={Modal}
               >
                 Learn more
@@ -90,7 +94,42 @@ function App() {
             <Testimonials />
           </div>
           <div className="order-8 col-span-2 bg-[#050138]">
-            Hello my baby, holy my honey
+            <div className="flex place-content-center pt-8 space-x-5">
+              <div className="">
+                <a href="https://www.facebook.com/zendesk/">
+                  <Facebook />
+                </a>
+              </div>
+
+              <div className="">
+                <a href="https://twitter.com/Zendesk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
+                  <Twitter />
+                </a>
+              </div>
+
+              <div className="">
+                <a href="https://www.linkedin.com/company/zendesk/mycompany/verification/">
+                  <LinkedIn />
+                </a>
+              </div>
+              <div className="">
+                <a href="https://github.com/zendesk">
+                  <Github />
+                </a>
+              </div>
+            </div>
+            <div className="grid grid-cols-2 text-white text-xs ml-10 font-mono pt-10 pb-10">
+              <div className="grid-rows-3 space-y-1">
+                <div>Contact</div>
+                <div>About Us</div>
+                <div>Terms and Conditions</div>
+              </div>
+              <div className="grid-rows-3 space-y-1">
+                <div>Careers</div>
+                <div>Change Country</div>
+                <div>FAQ</div>
+              </div>
+            </div>
           </div>
         </div>
       </div>
