@@ -12,20 +12,23 @@ import Github from './SVGs/Github';
 function App() {
   return (
     <div className="bg-[#E4F0D6]">
-      <div className="min-h-screen flex flex-wrap mx-auto max-w-screen-md">
+      <div className="flex flex-wrap mx-auto max-w-screen-md">
+        {/* Page grid layout, 2 columns medium screens and above, 1 column below */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="font-sans text-[#050138] grid-rows-3 text-center mx-20 md:m-4 space-y-4 order-2 md:order-1 col-span-2 md:col-span-1">
+          <div className="font-sans text-[#050138] text-center grid-rows-3 mx-20 md:m-4 space-y-4 order-2 md:order-1 col-span-2 md:col-span-1">
             <div className="text-2xl justify-center font-semibold">
               Sign-up for VIP support
             </div>
 
-            <p className="text-base">
+            <p className="">
               Tailored help and guidance experience for your evolving business
               needs and technical environment.
             </p>
             <div className="pt-3 md:pt-5">
               <button
-                className="bg-[#16494D] hover:shadow-xl hover:-translate-y-0.5 rounded-sm text-sm text-white py-2 px-4"
+                className="bg-[#16494D] hover:shadow-xl hover:scale-105 hover:-translate-y-0.5 rounded-sm text-sm text-white py-2 px-4 transition ease-in-out delay-150 duration-300
+             
+                "
                 onClick={Modal}
               >
                 Learn more
@@ -83,54 +86,95 @@ function App() {
                 className="bg-[#16494D] rounded-sm text-sm text-white py-2 px-4 hover:shadow-xl hover:-translate-y-0.5"
                 onClick={Modal}
               >
-                Learn more
+                Schedule a call
               </button>
             </div>
           </div>
-          <div className="order-7 col-span-2 mx-auto">
-            <div className="text-lg text-[#050138] mx-auto font-sans font-semibold">
+          <div className="order-7 col-span-2 mx-auto min-w-full pb-10 px-5 ">
+            <div className="text-lg text-center text-[#050138] mx-auto pb-5 font-sans font-semibold">
               Don't take our word for it
             </div>
             <Testimonials />
           </div>
-          <div className="order-8 col-span-2 bg-[#050138]">
-            <div className="flex place-content-center pt-8 space-x-5">
-              <div className="">
-                <a href="https://www.facebook.com/zendesk/">
-                  <Facebook />
-                </a>
-              </div>
+          <footer className="order-8 col-span-2 bg-[#050138] ">
+            <div className="flex flex-row place-content-center pt-8 gap-4 ">
+              <a href="https://www.facebook.com/zendesk/" target="_blank">
+                <Facebook />
+              </a>
 
-              <div className="">
-                <a href="https://twitter.com/Zendesk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor">
-                  <Twitter />
-                </a>
-              </div>
+              <a
+                href="https://twitter.com/Zendesk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
+                target="_blank"
+              >
+                <Twitter />
+              </a>
 
-              <div className="">
-                <a href="https://www.linkedin.com/company/zendesk/mycompany/verification/">
-                  <LinkedIn />
-                </a>
+              <a
+                href="https://www.linkedin.com/company/zendesk/mycompany/verification/"
+                target="_blank"
+              >
+                <LinkedIn />
+              </a>
+
+              <a href="https://github.com/zendesk" target="_blank">
+                <Github />
+              </a>
+            </div>
+            <div className="grid grid-cols-2 text-white text-xs font-mono pt-10 pb-10">
+              <div className="grid-rows-3 space-y-1 ml-10">
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    Contact
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    About Us
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    Terms and Conditions
+                  </a>
+                </div>
               </div>
-              <div className="">
-                <a href="https://github.com/zendesk">
-                  <Github />
-                </a>
+              <div className="grid-rows-3 space-y-1 ml-10">
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    Careers
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    Change Country
+                  </a>
+                </div>
+                <div>
+                  <a
+                    href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
+                    target="_blank"
+                  >
+                    FAQ
+                  </a>
+                </div>
               </div>
             </div>
-            <div className="grid grid-cols-2 text-white text-xs ml-10 font-mono pt-10 pb-10">
-              <div className="grid-rows-3 space-y-1">
-                <div>Contact</div>
-                <div>About Us</div>
-                <div>Terms and Conditions</div>
-              </div>
-              <div className="grid-rows-3 space-y-1">
-                <div>Careers</div>
-                <div>Change Country</div>
-                <div>FAQ</div>
-              </div>
-            </div>
-          </div>
+          </footer>
         </div>
       </div>
     </div>
