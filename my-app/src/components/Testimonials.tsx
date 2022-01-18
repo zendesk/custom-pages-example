@@ -12,7 +12,7 @@ function Testimonials() {
 								"
           alt="Great CS"
         />
-        <p className="py-8 px-8 font-mono text-sm ">
+        <p className="py-8 px-8 font-mono text-sm text-center">
           Momma always said, you spend money on good shoes, good tires, and good
           dedicated technical support teams for your integral SaaS technologies
           so that you can expand your business rapidly.
