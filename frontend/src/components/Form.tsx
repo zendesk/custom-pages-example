@@ -1,11 +1,31 @@
 import React from 'react';
-import FormValidation from '../utils/FormValidation';
+import { useForm } from '../utils/useForm';
 
 export interface FormValues {
     
 }
 
+
 function Form() {
+    const { onChange, onSubmit, values, errors } = useForm({
+        email: {
+            type: 'email',
+            errorMessage: 'Invalid email',
+            required: true,
+        },
+        phone: {
+            type: 'text',
+            errorMessage: 'Invalid password',
+            required: true,
+        },
+    }, 
+    (vals) => {
+
+    },
+    {
+        email: '',
+        phone: '',
+    })
     const handleSubmit = (event: React.FormEvent) => {
         // modal/form submit method to send to backend
         event.preventDefault();
