@@ -18,7 +18,7 @@ function Form() {
             errorMessage: 'Invalid password',
             required: true,
         },
-    }, 
+    },
     (vals) => {
 
     },
