@@ -12,6 +12,10 @@ import Github from "./SVGs/Github";
 
 function App() {
   const [showModal, setShowModal] = useState<boolean>(false);
+
+  const toggleOverlay = () => {
+    return showModal === true ? "overlay" : undefined;
+  };
   return (
     <div className="bg-[#E4F0D6]">
       <div className="flex flex-wrap mx-auto max-w-screen-md">
@@ -92,7 +96,6 @@ function App() {
             >
               Schedule a Call
             </button>
-            {showModal && <Modal setShowModal={setShowModal} />}
           </div>
         </div>
         <div className="order-7 col-span-2 mx-auto min-w-full pb-10 px-5 ">
