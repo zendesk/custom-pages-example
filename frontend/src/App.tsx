@@ -18,12 +18,12 @@ function App() {
       <div className="flex flex-wrap mx-auto max-w-screen-md">
         {/* Page grid layout, 2 columns medium screens and above, 1 column below */}
         <div className="grid grid-cols-2 gap-8">
-          <div className="order-2 md:order-1 font-sans text-[#050138] text-center grid-rows-3 px-20 md:m-4 space-y-4  col-span-2 md:col-span-1">
-            <div className="text-2xl justify-center font-semibold">
+          <div className="order-2 md:order-1 font-sans text-[#050138] text-center grid-rows-3 px-20 md:m-4 col-span-2 md:col-span-1">
+            <div className="text-2xl justify-center font-semibold pb-4">
               Sign-up for VIP support
             </div>
 
-            <p className="">
+            <p className="pb-4">
               Tailored help and guidance experience for your evolving business
               needs and technical environment.
             </p>
