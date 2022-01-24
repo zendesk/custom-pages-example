@@ -2,11 +2,10 @@ import React from "react";
 import Form from "./Form";
 
 export interface ModalProps {
-  showModal: boolean;
   setShowModal(a: boolean): void;
 }
 
-function Modal({ showModal, setShowModal }: ModalProps) {
+function Modal({ setShowModal }: ModalProps) {
 
   return (
     <div className="modal">

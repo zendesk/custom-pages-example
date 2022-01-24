@@ -35,7 +35,7 @@ function App() {
             >
               Learn more
             </button>
-            {showModal && <Modal setShowModal={setShowModal} showModal={showModal}/>}
+            {showModal && <Modal setShowModal={setShowModal}/>}
           </div>
         </div>
 
