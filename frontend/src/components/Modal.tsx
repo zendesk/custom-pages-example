@@ -8,13 +8,15 @@ export interface ModalProps {
 function Modal({ setShowModal } : ModalProps) {
 
     return(
-        <div className="modal bg-white py-4">
-            <h3>Hey I'm a modal</h3>
-            <Form />
-            <button onClick={e => {
+        <div className="modal bg-[#17494D] p-4 rounded-lg text-white">
+            <div className="flex text-center justify-center pt-5">
+            <h3 className="text-xl">Sign-up</h3>
+            <button className="fixed right-5 top-3 text-[20px]"onClick={e => {
                 e.preventDefault();
                 setShowModal(false)
-            }}>X</button>
+            }}>&#10006;</button>
+            </div>
+            <Form />
         </div>
     )
 }

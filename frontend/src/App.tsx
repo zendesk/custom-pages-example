@@ -17,6 +17,7 @@ function App() {
     return showModal === true ? "overlay" : undefined;
   };
   return (
+    <div className={toggleOverlay()}>
     <div className="bg-[#E4F0D6]">
       <div className="flex flex-wrap mx-auto max-w-screen-md">
         {/* Page grid layout, 2 columns medium screens and above, 1 column below */}
@@ -184,6 +185,7 @@ function App() {
           </div>
         </footer>
       </div>
+    </div>
     </div>
   );
 }

@@ -18,6 +18,12 @@ export interface HandleErrors {
   showError(): void
 };
 
+export interface UseFormProps {
+  validation: Validation
+  handleSubmit: (vals: Values) => void;
+  initialValues: Values;
+}
+
 /*
 {
   email: {
@@ -35,16 +41,13 @@ export interface HandleErrors {
 
 */
 
-const validateEmail = (email: string): boolean => {
-  return ((email || '')
-    .toLowerCase()
-    .match(
-      /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
-    ) || 0) > 0;
-};
+const validateEmail = (email: string) => {
+  var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+  return regex.test(email);
+}
 
-export const useForm = (validation: Validation, callback: any, initialState = {}) => {
-  const [ values, setValues ] = useState<Values>(initialState);
+export const useForm = ({ validation, handleSubmit, initialValues = {} }: UseFormProps) => {
+  const [ values, setValues ] = useState<Values>(initialValues);
   const [ errors, setErrors ] = useState<Errors>({});
 
   const handleValidation = (values: Values) => {
@@ -93,7 +96,7 @@ export const useForm = (validation: Validation, callback: any, initialState = {}
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await callback(values);
+    await handleSubmit(values);
   }
 
   return {
