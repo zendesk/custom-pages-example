@@ -13,16 +13,12 @@ import Github from "./SVGs/Github";
 function App() {
   const [showModal, setShowModal] = useState<boolean>(false);
 
-  const toggleOverlay = () => {
-    return showModal === true ? "overlay" : undefined;
-  };
   return (
-    <div className={toggleOverlay()}>
     <div className="bg-[#E4F0D6]">
       <div className="flex flex-wrap mx-auto max-w-screen-md">
         {/* Page grid layout, 2 columns medium screens and above, 1 column below */}
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
-          <div className="font-sans text-[#050138] text-center grid-rows-3 mx-20 md:m-4 space-y-4 order-2 md:order-1 col-span-2 md:col-span-1">
+          <div className="font-sans text-[#050138] text-center grid-rows-3 px-20 md:m-4 space-y-4 order-2 md:order-1 col-span-2 md:col-span-1">
             <div className="text-2xl justify-center font-semibold">
               Sign-up for VIP support
             </div>
@@ -39,7 +35,7 @@ function App() {
             >
               Learn more
             </button>
-            {showModal && <Modal setShowModal={setShowModal} />}
+            {showModal && <Modal setShowModal={setShowModal} showModal={showModal}/>}
           </div>
         </div>
 
@@ -185,7 +181,6 @@ function App() {
           </div>
         </footer>
       </div>
-    </div>
     </div>
   );
 }
