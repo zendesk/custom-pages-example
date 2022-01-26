@@ -31,7 +31,7 @@ function Form() {
       console.log("SUBMIT", values);
 
       // TODO: Update this URL?
-      const request: RequestInfo = new Request("http://localhost:5000/submit", {
+      const request: RequestInfo = new Request("process.env.LOCAL_API_URL", {
         method: "POST",
         body: JSON.stringify({
           name: values.name,
