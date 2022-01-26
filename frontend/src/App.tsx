@@ -18,7 +18,7 @@ function App() {
       <div className="flex flex-wrap mx-auto max-w-screen-md">
         {/* Page grid layout, 2 columns medium screens and above, 1 column below */}
         <div className="grid grid-cols-2 gap-8">
-          <div className="order-2 md:order-1 font-sans text-[#050138] text-center grid-rows-3 px-20 md:m-4 col-span-2 md:col-span-1">
+          <div className="order-2 md:order-1 font-sans text-[#050138] text-center grid-rows-3 px-20 md:px-0 md:m-4 col-span-2 md:col-span-1">
             <div className="text-2xl justify-center font-semibold pb-4">
               Sign-up for VIP support
             </div>
@@ -91,11 +91,13 @@ function App() {
                   setShowModal(true);
                 }}
               >
-                Schedule a Call
+                Become a VIP
               </button>
             </div>
           </div>
-          <div className="order-7 col-span-2 mx-auto min-w-full pb-10 px-5">
+
+          {/* Testimonials container*/}
+          <div className="order-7 col-span-2 mx-auto min-w-full pb-5">
             <div className="text-lg text-center text-[#050138] mx-auto pb-5 font-sans font-semibold">
               Don't take our word for it
             </div>
