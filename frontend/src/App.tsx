@@ -29,6 +29,7 @@ function App() {
             </p>
             <button
               className="bg-[#16494D] rounded-sm text-sm text-white py-2 px-4"
+              data-testid="learn-more-btn"
               onClick={(e) => {
                 setShowModal(true);
               }}
