@@ -35,7 +35,7 @@ function Form() {
         method: "POST",
         body: JSON.stringify({
           name: values.name,
-          organization: "",
+          organization: values.organization,
           email: values.email,
         }),
       });
