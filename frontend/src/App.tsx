@@ -94,7 +94,7 @@ function App() {
               </button>
             </div>
           </div>
-          <div className="order-7 col-span-2 mx-auto min-w-full pb-10 px-5 ">
+          <div className="order-7 col-span-2 mx-auto min-w-full pb-10 px-5">
             <div className="text-lg text-center text-[#050138] mx-auto pb-5 font-sans font-semibold">
               Don't take our word for it
             </div>

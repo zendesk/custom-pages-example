@@ -5,7 +5,7 @@ function Testimonials() {
 
   return (
     <div className="grid grid-cols-3 min-h-full gap-3">
-      <div className=" min-w-[33%]  grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px] overflow-y-scroll">
+      <div className=" min-w-[33%]  grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px]">
         <img
           className="grid h-24 w-24 text-sm rounded-full ring-2  ring-zinc-500 mx-auto"
           src="/Test1.jpg
@@ -19,7 +19,7 @@ function Testimonials() {
         </p>
         <div className=""></div>
       </div>
-      <div className=" min-w-[33%] grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px] overflow-y-scroll">
+      <div className=" min-w-[33%] grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px]">
         <img
           className="grid h-24 w-24 text-sm rounded-full ring-2  ring-zinc-500 mx-auto"
           src="/Test2.jpg
@@ -32,7 +32,7 @@ function Testimonials() {
         </p>
         <div className=""></div>
       </div>
-      <div className=" min-w-[33%] grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px] overflow-y-scroll">
+      <div className=" min-w-[33%] grid-rows-3 rounded-3xl bg-white border-2 border-black pt-8 drop-shadow-2xl max-h-[300px]">
         <img
           className="grid h-24 w-24 text-sm rounded-full ring-2  ring-zinc-500 mx-auto"
           src="/Test3.jpg

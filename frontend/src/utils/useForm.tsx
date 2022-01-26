@@ -7,7 +7,7 @@ export type Values = Record<string, any>;
 export type Errors = Record<string, ErrorMessage>;
 
 export type Validation = Record<string, {
-  type: 'text' | 'number' | 'email' | ((value: any) => boolean);
+  type: 'text' | 'email' | ((value: any) => boolean);
   required?: boolean;
   errorMessage: string;
 }>;
@@ -33,8 +33,8 @@ export interface UseFormProps {
   },
   foo: {
     required: true,
-    type: 'number',
-    message: 'Must be a number',
+    type: 'text',
+    message: 'Organization required',
   }
 
 }
@@ -62,10 +62,6 @@ export const useForm = ({ validation, handleSubmit, initialValues = {} }: UseFor
 
         if (validator.type === 'text') {
           if (typeof value !== 'string') {
-            valid = false;
-          }
-        } else if (validator.type === 'number') {
-          if (isNaN(parseInt(value))) {
             valid = false;
           }
         } else if (validator.type === 'email') {
