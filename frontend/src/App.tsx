@@ -44,7 +44,7 @@ function App() {
               className="w-full h-[250px] object-center object-cover"
               src="//theme.zdassets.com/theme_assets/958528/d0e362da6d34a36d9a45f740f48bf3b8d0be038a.jpg
 "
-              alt="Great CS"
+              alt="Magnifying glass looking at small computer with yellow background"
             />
           </div>
 
@@ -70,7 +70,7 @@ function App() {
             <img
               className="w-full h-[250px] object-center object-cover "
               src="//theme.zdassets.com/theme_assets/958528/0fa19dd2a438bcb69a24c3f7fa1dd9def95f987e.jpg"
-              alt="Great CS"
+              alt="Fun shapes arranged playfully on yellow background"
             />
           </div>
           <div className="order-6 font-sans text-[#050138] grid-rows-3 text-center space-y-4  col-span-2 md:col-span-1">
