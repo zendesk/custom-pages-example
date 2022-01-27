@@ -42,7 +42,8 @@ function App() {
           <div className="order-1 md:order-2 col-span-2 md:col-span-1">
             <img
               className="w-full h-[250px] object-center object-cover"
-              src="/support800.jpg"
+              src="//theme.zdassets.com/theme_assets/958528/d0e362da6d34a36d9a45f740f48bf3b8d0be038a.jpg
+"
               alt="Great CS"
             />
           </div>
@@ -68,8 +69,7 @@ function App() {
           <div className="order-5 col-span-2 md:col-span-1 md:mx-0 mx-auto">
             <img
               className="w-full h-[250px] object-center object-cover "
-              src="/stats800.jpg
-								"
+              src="//theme.zdassets.com/theme_assets/958528/0fa19dd2a438bcb69a24c3f7fa1dd9def95f987e.jpg"
               alt="Great CS"
             />
           </div>

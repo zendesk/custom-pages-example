@@ -8,8 +8,7 @@ function Testimonials() {
       <div className="basis-1/3 rounded-3xl bg-white border-2 border-black pt-8">
         <img
           className="h-[8rem] w-[8rem] rounded-full ring-2 ring-zinc-500 ring-offset-2 ring-offset-zinc-400 mx-auto"
-          src="/Test1.jpg
-								"
+          src="//theme.zdassets.com/theme_assets/958528/9ef1b712145ab47cdfa1a4d3f6b7e47526257a2d.jpg"
           alt="Great CS"
         />
         <p className="py-6 px-6 font-mono text-sm text-center">
@@ -21,8 +20,7 @@ function Testimonials() {
       <div className="flex-row  basis-1/3 rounded-3xl bg-white border-2 border-black pt-8">
         <img
           className="h-[8rem] w-[8rem] rounded-full ring-2 ring-zinc-500 ring-offset-2 ring-offset-zinc-400 mx-auto"
-          src="/Test2.jpg
-								"
+          src="//theme.zdassets.com/theme_assets/958528/202db06691aa3c4fb8758cf4245e14ef275a2859.jpg"
           alt="Great CS"
         />
         <p className="py-6 px-6 font-mono text-sm text-center">
@@ -33,8 +31,7 @@ function Testimonials() {
       <div className="basis-1/3 rounded-3xl bg-white border-2 border-black pt-8 ">
         <img
           className="h-[8rem] w-[8rem] rounded-full ring-2 ring-zinc-500 ring-offset-2 ring-offset-zinc-400 mx-auto"
-          src="/Test3.jpg
-								"
+          src="//theme.zdassets.com/theme_assets/958528/762d86cf90f765eee030940bbab073aad4f51310.jpg"
           alt="Great CS"
         />
         <p className="py-6 px-6 font-mono text-sm text-center">
