@@ -4,6 +4,9 @@ require("dotenv").config();
 
 const app = express();
 
+// Include auth
+const auth = require("./auth.js");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -126,9 +129,14 @@ const createOrUpdateOrg = async (req, res) => {
 };
 
 
-app.post("/submit", (req, res) => {
-  //Start by creating the org
+app.post("/submit", auth.authenticateToken, (req, res) => {
+  // Start by creating the org
   createOrUpdateOrg(req, res);
+});
+
+app.post("/authenticate", (req, res) => {
+  // Return a JWT token to authorize requests
+  auth.generateToken(req, res);
 });
 
 const PORT = process.env.PORT || 5000;
