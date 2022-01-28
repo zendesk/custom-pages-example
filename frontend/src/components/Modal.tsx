@@ -7,8 +7,11 @@ export interface ModalProps {
 
 function Modal({ setShowModal }: ModalProps) {
   return (
-    <div data-testid="modal" className="fixed z-auto inset-0 bg-[#00000080]">
-      <div className="absolute inset-y-1/2 inset-x-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#17494D] h-[375px] w-[300px] rounded-lg text-white md:w-[400px]">
+    <div
+      data-testid="modal"
+      className="fixed backdrop-blur-[1px] z-auto inset-0 bg-[#00000080]"
+    >
+      <div className="absolute inset-y-1/2 inset-x-1/2 -translate-x-1/2 -translate-y-1/2 bg-[#17494D] h-[350px] md:h-[375px] w-[300px] rounded-lg drop-shadow-lg text-white md:w-[400px]">
         <div className="flex text-center justify-center pt-5">
           <h3 className="text-xl">Sign-up</h3>
           <button

@@ -64,7 +64,7 @@ function Form() {
               onChange={onChange}
             />
             {errors?.name && (
-              <div className="text-red-400 text-sm absolute left-12 top-28">
+              <div className="text-red-400 text-sm absolute left-12 top-[105px] md:top-28">
                 {errors.name}
               </div>
             )}
@@ -82,7 +82,7 @@ function Form() {
               onChange={onChange}
             />
             {errors?.organization && (
-              <div className="text-red-400 text-sm absolute left-12 bottom-40">
+              <div className="text-red-400 text-sm absolute top-[178px] left-12 md:top-[192px]">
                 {errors.organization}
               </div>
             )}
@@ -100,14 +100,14 @@ function Form() {
               onChange={onChange}
             />
             {errors?.email && (
-              <div className="text-red-400 text-sm absolute left-12 bottom-20">
+              <div className="text-red-400 top-[250px] text-sm absolute left-12 md:top-[274px]">
                 {errors.email}
               </div>
             )}
           </div>
         </div>
         <button
-          className="text-center rounded-md bg-[#17494D] w-1/4 place-self-center border-[#E4F0D6] border-2 text-white"
+          className="text-center rounded-md bg-[#17494D] w-1/4 place-self-center border-[#E4F0D6] border-2 text-white mt-5"
           type="submit"
         >
           Submit
