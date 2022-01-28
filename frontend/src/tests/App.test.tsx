@@ -7,17 +7,16 @@ import Modal from '../components/Modal';
 import Form from '../components/Form';
 
 
+
 test("renders App without crashing", () => {
   render(<App />);
 });
 
-test('modal opens on Learn More button click', () => {
+test('modal opens on Learn More button click', async () => {
   render(<App />);
   const button = screen.getByText(/Learn More*/i);
   fireEvent.click(button)
-  render(<Modal />)
-  expect(screen.getByTestId('modal').toBeInTheDocument())
-
+  expect(screen.getAllByTestId('modal')).toBeInTheDocument()
 });
 
 test('modal form accepts all inputs', () => {
