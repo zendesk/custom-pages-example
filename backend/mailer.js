@@ -16,7 +16,8 @@ module.exports = {
       from: 'vip.notifications1@gmail.com',
       to: recipient,
       subject: 'VIP Support',
-      html: { path: './template.html' }
+      text: 'Thanks for signing up for VIP Support!'
+      // message text - HTML to come
     };
 
     transporter.sendMail(mailOptions, function(error, info){
