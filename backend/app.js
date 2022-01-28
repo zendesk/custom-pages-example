@@ -1,8 +1,12 @@
 const express = require("express");
 const fetch = require("node-fetch");
+const validator = require("validator");
 require("dotenv").config();
 
 const app = express();
+
+// Include auth
+const auth = require("./auth.js");
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
@@ -25,7 +29,7 @@ const findOrg = async (req, res) => {
   };
 
   const response = await fetch(url, config);
-  
+
   if (response.ok) {
     response.json().then(data => {
       console.log('Org found by name');
@@ -107,14 +111,14 @@ const createOrUpdateOrg = async (req, res) => {
   };
 
   const response = await fetch(url, config);
-  
+
 
   if (response.ok) {
     response.json().then(data => {
      console.log('Org created/updated');
      createOrUpdateUser(req, res, data.organization);
    });
-  } 
+  }
   else if (response.status===422){
     // Find the existing org by name if it already exists
     console.log(`Error creating org...${response.status}: ${response.statusText}...finding existing org by name`);
@@ -125,10 +129,34 @@ const createOrUpdateOrg = async (req, res) => {
   }
 };
 
+// Validating user input sent from FE
+const validateData = (req, res) => {
 
-app.post("/submit", (req, res) => {
-  //Start by creating the org
-  createOrUpdateOrg(req, res);
+  const checkedEmail = validator.isEmail(req.body.email + '');
+  const checkedName = validator.isAlpha(req.body.name + '', 'en-US', {ignore: " -'"})
+  const nameLength = validator.isLength(req.body.name + '', {min: 4, max: 60});
+  const checkedOrg = validator.isLength(req.body.organization + '', {min: 4, max: 80});
+
+  if(!checkedEmail){
+    res.status(400).send({error: `Email ${req.body.email} is invalid. Please check your details and try again`})
+  } else if(!checkedName || !nameLength) {
+    res.status(400).send({error: `Name ${req.body.name} is invalid. Please check your details and try again`})
+  } else if(!checkedOrg) {
+    res.status(400).send({error: `Organization ${req.body.organization} is invalid. Please check your details and try again`})
+  } else {
+    // Proceed to create or update org on successful data validation
+    createOrUpdateOrg(req, res);
+  }
+}
+
+app.post("/submit", auth.authenticateToken, (req, res) => {
+  // Start by validating submission data
+  validateData(req, res);
+});
+
+app.post("/authenticate", (req, res) => {
+  // Return a JWT token to authorize requests
+  auth.generateToken(req, res);
 });
 
 const PORT = process.env.PORT || 5000;
