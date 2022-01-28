@@ -30,7 +30,7 @@ module.exports = {
     const token = authHeader ? authHeader.split(' ')[1] : '';
   
     // Check whether a token is present
-    if (authHeader == null) {
+    if (token == null) {
         return res.status(401).send({error:'Invalid credentials'});
     }
     
