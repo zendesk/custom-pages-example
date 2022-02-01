@@ -8,6 +8,9 @@ const app = express();
 // Include auth
 const auth = require("./auth.js");
 
+// Include mail for user notifications
+const mail = require("./mailer.js");
+
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -51,8 +54,8 @@ const createOrgMembership = async (res, user, org) => {
     headers: headers,
     body: JSON.stringify({
       organization_membership: {
-        organization_id: org,
-        user_id: user
+        organization_id: org.id,
+        user_id: user.id
       }
     }),
   };
@@ -60,10 +63,12 @@ const createOrgMembership = async (res, user, org) => {
   const response = await fetch(url, config);
 
   if (response.ok) {
+    mail.notifyUser(user.email);
     res.status(response.status).send("User and org created/updated.");
   }
   else if (response.status===422){
     console.log(`User already belongs to the organization. User/org updates complete.`);
+    mail.notifyUser(user.email);
     res.status(201).send("User and org created/updated.");
   }
   else {
@@ -92,7 +97,7 @@ const createOrUpdateUser = async (req, res, org) => {
   if (response.ok) {
     response.json().then(data => {
       console.log("User created/updated");
-      createOrgMembership(res, data.user.id, org.id);
+      createOrgMembership(res, data.user, org);
     });
   } else {
     res.status(response.status).send({error:`Cannot create/update user: ${response.statusText}`});
