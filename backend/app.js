@@ -14,6 +14,13 @@ const mail = require("./mailer.js");
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
+// Adding CORS headers to response
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  next()
+});
+
 const subdomain = process.env.SUBDOMAIN;
 const encodedData = Buffer.from(`${process.env.USERNAME}/token:${process.env.TOKEN}`).toString("base64");
 const headers = {
