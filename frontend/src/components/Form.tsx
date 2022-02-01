@@ -1,5 +1,6 @@
 import React from "react";
 import { useForm } from "../utils/useForm";
+import { getAuthToken } from "../utils/getAuthToken";
 
 export interface FormValues {}
 
@@ -30,9 +31,14 @@ function Form() {
     handleSubmit: async (values) => {
       console.log("SUBMIT", values);
 
-      // TODO: Update this URL?
+      const token = await getAuthToken()
+      
+
       const request: RequestInfo = new Request(process.env.REACT_APP_API_URL + '/submit', {
         method: "POST",
+        headers: {
+          "Authorization": "Bearer" + token
+        },
         body: JSON.stringify({
           name: values.name,
           organization: values.organization,
@@ -42,7 +48,8 @@ function Form() {
 
       const res = await fetch(request);
 
-      const body = await res.json();
+      const data = await res.json();
+      console.log("DATA: ", data)
     },
   });
 
