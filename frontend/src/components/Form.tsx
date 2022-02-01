@@ -87,6 +87,7 @@ function Form() {
               type="text"
               required={true}
               onChange={onChange}
+              value={values.name}
             />
             {errors?.name && (
               <div className="text-red-400 text-sm absolute left-12 top-[105px] md:top-28">
@@ -104,6 +105,8 @@ function Form() {
               type="text"
               required={true}
               onChange={onChange}
+              value={values.organization}
+
             />
             {errors?.organization && (
               <div className="text-red-400 text-sm absolute top-[178px] left-12 md:top-[192px]">
@@ -121,6 +124,7 @@ function Form() {
               type="email"
               required={true}
               onChange={onChange}
+              value={values.email}
             />
             {errors?.email && (
               <div className="text-red-400 top-[250px] text-sm absolute left-12 md:top-[274px]">
