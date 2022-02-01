@@ -20,7 +20,7 @@ test('modal opens on Learn More button click', async () => {
 });
 
 test('modal form accepts all inputs', () => {
-  render(<Form />)
+  // render(<Form />)
 
   const name = screen.getByPlaceholderText(/name*/i)
   expect(name).toBeTruthy();

@@ -1,7 +1,7 @@
 
 
 export const getAuthToken = async () => {
-    const request: RequestInfo = new Request( 'https://testcustompages.free.beeceptor.com' + '/authenticate', {  //process.env.REACT_APP_API_URL
+    const request: RequestInfo = new Request( process.env.REACT_APP_API_URL + '/authenticate', { 
         method: "POST",
         headers: {
             'Accept': 'application/json',

@@ -102,7 +102,7 @@ export const useForm = ({
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    handleSubmit(values);
+    await handleSubmit(values);
     setValues(initialValues);
   };
 

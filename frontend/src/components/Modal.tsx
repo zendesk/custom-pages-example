@@ -1,15 +1,19 @@
 import React from "react";
 import Form from "./Form";
-import Submission from "./SubmitSuccess";
-import { useForm } from "../utils/useForm";
+import { useState } from "react";
 
-export interface ModalProps {
+interface ModalProps {
   setShowModal(a: boolean): void;
 }
 
 function Modal(
   { setShowModal }: ModalProps,
 ) {
+
+  const [submitSuccess, setSubmitSuccess] = useState(false);
+  const [submitFailure, setSubmitFailure] = useState(false);
+  const [formState, setFormState] = useState(true);
+
   return (
     <div
       data-testid="modal"
@@ -23,12 +27,13 @@ function Modal(
             onClick={(e) => {
               e.preventDefault();
               setShowModal(false);
+              setFormState(true);
             }}
           >
             &#10006;
           </button>
         </div>
-        <Form />
+        <Form setSubmitSuccess={setSubmitSuccess} submitSuccess={submitSuccess} setSubmitFailure={setSubmitFailure} submitFailure={submitFailure} setFormState={setFormState} formState={formState}/>
       </div>
     </div>
   );
