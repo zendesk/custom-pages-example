@@ -1,11 +1,15 @@
-import React from 'react';
-import Form from './Form';
+import React from "react";
+import Form from "./Form";
+import Submission from "./SubmitSuccess";
+import { useForm } from "../utils/useForm";
 
 export interface ModalProps {
   setShowModal(a: boolean): void;
 }
 
-function Modal({ setShowModal }: ModalProps) {
+function Modal(
+  { setShowModal }: ModalProps,
+) {
   return (
     <div
       data-testid="modal"

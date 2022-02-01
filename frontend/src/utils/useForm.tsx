@@ -1,4 +1,4 @@
-import React, { isValidElement, useState } from 'react';
+import React, { useState } from 'react';
 
 export type ErrorMessage = string | null;
 
@@ -102,7 +102,11 @@ export const useForm = ({
 
   const onSubmit = async (event: React.FormEvent<HTMLFormElement>) => {
     event.preventDefault();
-    await handleSubmit(values);
+    handleSubmit(values);
+    console.log("VALUES BRO: ", values)
+    console.log("INITIAL: ", initialValues)
+    setValues(initialValues);
+    console.log("VALUES now: ", values)
   };
 
   return {

@@ -1,11 +1,16 @@
 import React from "react";
 import { useForm } from "../utils/useForm";
 import { getAuthToken } from "../utils/getAuthToken";
+import { useState } from "react";
 
-
-export interface FormValues {}
+import SubmitFail from "./SubmitFail";
+import SubmitSuccess from "./SubmitSuccess";
 
 function Form() {
+  const[submitSuccess, setSubmitSuccess] = useState(false);
+  const[submitFailure, setSubmitFailure] = useState(false);
+  const[formState, setFormState] = useState(true);
+
   const { onChange, onSubmit, values, errors } = useForm({
     validation: {
       name: {
@@ -35,7 +40,7 @@ function Form() {
       const token = await getAuthToken()
       
 
-      const request: RequestInfo = new Request(process.env.REACT_APP_API_URL + '/submit', {
+      const request: RequestInfo = new Request( 'https://testcustompages.free.beeceptor.com' + '/submit', {   //process.env.REACT_APP_API_URL
         method: "POST",
         headers: {
           "Authorization": "Bearer" + token
@@ -47,19 +52,34 @@ function Form() {
         }),
       });
 
-      const res = await fetch(request);
+      await fetch(request)
+      .then((res) => {
+        if(!res.ok) {
+          setSubmitFailure(true)
+          console.log(res.status)
+        } else {
+          setSubmitSuccess(true)
+          console.log(res.status)
+        }
+      }).then((data) => {
+        console.log("DATA: ", data)
+      }).catch((error) => {
+        console.log("ERROR: ", error)
+      })
 
-      const data = await res.json();
-      console.log("DATA: ", data)
+      // const data = await res.json();
+      // console.log("DATA: ", data)
+      
     },
   });
 
   return (
     <form className="flex pt-2" onSubmit={onSubmit}>
+      {submitFailure && <SubmitFail />}
+      {submitSuccess && <SubmitSuccess />}
       <div className="flex flex-col text-left w-full">
         <div className="static">
           <div className="my-6 flex justify-center">
-            {/* <label className="ml-1 md:ml-3 text-sm md:text-base md-text-white">Name:</label> */}
             <input
               className="md:py-1 rounded-md w-2/3 md:w-9/12 mr-1 md:mr-2 text-black pl-3"
               placeholder="Name"
@@ -77,7 +97,6 @@ function Form() {
         </div>
         <div className="static">
           <div className="my-6 flex justify-center">
-            {/* <label className="ml-1 md:ml-3 text-sm md:text-base text-white">Organization:</label> */}
             <input
               className="md:py-1 rounded-md w-2/3 md:w-9/12 mr-1 md:mr-2 text-black pl-3"
               placeholder="Organization"
@@ -95,7 +114,6 @@ function Form() {
         </div>
         <div className="static">
           <div className="my-6 flex justify-center">
-            {/* <label className="ml-1 md:ml-3 text-sm md:text-base text-white">Email:</label> */}
             <input
               className="md:py-1 rounded-md w-2/3 md:w-9/12 mr-1 md:mr-2 text-black pl-3"
               placeholder="Email"
