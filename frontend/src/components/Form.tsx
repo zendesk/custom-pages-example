@@ -1,7 +1,6 @@
 import React from "react";
 import { useForm } from "../utils/useForm";
 import { getAuthToken } from "../utils/getAuthToken";
-import { useState } from "react";
 
 import SubmitFail from "./SubmitFail";
 import SubmitSuccess from "./SubmitSuccess";

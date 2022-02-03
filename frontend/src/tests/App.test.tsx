@@ -7,6 +7,9 @@ import Modal from '../components/Modal';
 import Form from '../components/Form';
 
 
+function setShowModal() {
+  return true
+}
 
 test("renders App without crashing", () => {
   render(<App />);
@@ -16,16 +19,33 @@ test('modal opens on Learn More button click', async () => {
   render(<App />);
   const button = screen.getByText(/Learn More*/i);
   fireEvent.click(button)
-  expect(screen.getAllByTestId('modal')).toBeInTheDocument()
+  const modal = render(<Modal setShowModal={setShowModal}/>)
+  expect(modal.getAllByTestId('modal')).toBeTruthy();
 });
 
-test('modal form accepts all inputs', () => {
-  // render(<Form />)
+function setSubmitFailure() {
+  return false
+}
 
-  const name = screen.getByPlaceholderText(/name*/i)
+function setSubmitSuccess() {
+  return false
+}
+
+function setFormState() {
+  return true
+}
+
+let submitSuccess = false
+let submitFailure = false
+let formState = true
+
+test('modal form accepts all inputs', () => {
+  const form = render(<Form setSubmitFailure={setSubmitFailure} setSubmitSuccess={setSubmitSuccess} setFormState={setFormState} formState={formState} submitFailure={submitFailure} submitSuccess={submitSuccess}/>)
+
+  const name = form.getByPlaceholderText(/name*/i)
   expect(name).toBeTruthy();
-  const organization = screen.getByPlaceholderText(/organization*/i)
+  const organization = form.getByPlaceholderText(/organization*/i)
   expect(organization).toBeTruthy();
-  const email = screen.getByPlaceholderText(/email*/i)
+  const email = form.getByPlaceholderText(/email*/i)
   expect(email).toBeTruthy();
 })
