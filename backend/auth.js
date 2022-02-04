@@ -1,3 +1,6 @@
+// This module uses JWT for authentication and route protection
+// See https://jwt.io/ for more details
+
 require("dotenv").config();
 const jwt = require("jsonwebtoken");
 
@@ -8,7 +11,7 @@ module.exports = {
             id: process.env.SYSTEM_USER_ID,
             name: process.env.SYSTEM_USER_NAME
         };
-        
+
         // Verify supplied key
         if (key===process.env.USER_KEY) {
             // Return JWT token
@@ -16,7 +19,7 @@ module.exports = {
                 if (err) {
                     return res.status(403).send({error:'Failed to generate token'});
                 }
-                else {  
+                else {
                     return res.json({token});
                 }
             });
@@ -26,21 +29,22 @@ module.exports = {
         }
     },
     authenticateToken : (req, res, next) => {
+    // Extracts token from authorization header
     const authHeader = req.headers['authorization'];
     const token = authHeader ? authHeader.split(' ')[1] : '';
-  
+
     // Check whether a token is present
     if (token == null) {
         return res.status(401).send({error:'Invalid credentials'});
     }
-    
+
     // Verify the token
     jwt.verify(token, process.env.SHARED_SECRET, (err) => {
       if (err) {
         console.log(err);
         return res.status(403).send({error:'Invalid token'});
       }
-  
+
       next();
     })
   }
