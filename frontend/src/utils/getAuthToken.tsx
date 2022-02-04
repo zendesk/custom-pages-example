@@ -1,5 +1,4 @@
-
-
+// handle the auth request to get the token to be passed in submit request header
 export const getAuthToken = async () => {
     const request: RequestInfo = new Request( process.env.REACT_APP_API_URL + '/authenticate', { 
         method: "POST",

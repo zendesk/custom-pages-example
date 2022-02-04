@@ -10,6 +10,7 @@ function Modal(
   { setShowModal }: ModalProps,
 ) {
 
+  // state for submit success/failure ui response
   const [submitSuccess, setSubmitSuccess] = useState(false);
   const [submitFailure, setSubmitFailure] = useState(false);
   const [formState, setFormState] = useState(true);

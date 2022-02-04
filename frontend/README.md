@@ -1,46 +1,43 @@
-# Getting Started with Create React App
+# Custom Pages Frontend
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A showcase of the Custom Pages functionality. Custom Pages is an addition to help center themes in Zendesk Guide. The frontend has been built using React with Typescript and Tailwind CSS.
 
-## Available Scripts
+This single page app consists of a landing page for VIP Support, a modal upon button click and within it a form that submits the user's sign-up data to update that user and its organization within Zendesk. A tag is applied and email confirmation is sent to the user.  
 
-In the project directory, you can run:
+## Getting started
 
-### `npm start`
+The following steps are how to get the frontend of this project running locally.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+### Prerequisites
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+- npm
+```
+npm install npm@latest -g
+```
+### Installation
+1. Clone the repo
+```
+git clone https://github.com/zendesk/custom-pages-example.git
+```
+2. Change directories to the frontend
+```
+cd frontend
+```
 
-### `npm test`
+3. Install dependencies
+```
+npm install
+```
+4. Run the app. 
+```
+npm start
+```
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+To run tests 
+```
+npm test
+```
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+## Issues
+You can [create an issue on Github](https://github.com/zendesk/custom-pages-example/issues/new), reach out in our [Developer Community](https://support.zendesk.com/hc/en-us/community/topics), or report the issue in the [Zendesk Developers Slack group](https://docs.google.com/forms/d/e/1FAIpQLScm_rDLWwzWnq6PpYWFOR_PwMaSBcaFft-1pYornQtBGAaiJA/viewform).

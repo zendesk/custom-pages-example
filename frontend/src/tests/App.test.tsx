@@ -15,6 +15,7 @@ test("renders App without crashing", () => {
   render(<App />);
 });
 
+// testing modal render on page with button click
 test('modal opens on Learn More button click', async () => {
   render(<App />);
   const button = screen.getByText(/Learn More*/i);
@@ -39,6 +40,7 @@ let submitSuccess = false
 let submitFailure = false
 let formState = true
 
+// testing form inputs
 test('modal form accepts all inputs', () => {
   const form = render(<Form setSubmitFailure={setSubmitFailure} setSubmitSuccess={setSubmitSuccess} setFormState={setFormState} formState={formState} submitFailure={submitFailure} submitSuccess={submitSuccess}/>)
 
@@ -48,4 +50,5 @@ test('modal form accepts all inputs', () => {
   expect(organization).toBeTruthy();
   const email = form.getByPlaceholderText(/email*/i)
   expect(email).toBeTruthy();
-})
+});
+

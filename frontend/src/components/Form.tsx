@@ -45,7 +45,7 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
       const token = await getAuthToken();
 
       const request: RequestInfo = new Request(
-        process.env.REACT_APP_API_URL + "/submit",
+        "https://custom-pg-again.free.beeceptor.com" + "/submit", //process.env.REACT_APP_API_URL
         {
           method: "POST",
           headers: {
