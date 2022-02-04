@@ -45,7 +45,7 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
       const token = await getAuthToken();
 
       const request: RequestInfo = new Request(
-        "https://custom-pg-again.free.beeceptor.com" + "/submit", //process.env.REACT_APP_API_URL
+        process.env.REACT_APP_API_URL + "/submit", //tested with mock api - getting CORS err for submit
         {
           method: "POST",
           headers: {
