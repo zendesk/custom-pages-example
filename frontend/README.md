@@ -28,7 +28,7 @@ cd frontend
 ```
 npm install
 ```
-4. Copy the .env.example into .env and adjust as needed  
+4. Copy the .env.example into .env and replace example values
 5. Run the app. 
 ```
 npm start

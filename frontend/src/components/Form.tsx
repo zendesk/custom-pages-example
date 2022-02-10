@@ -40,12 +40,11 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
       email: "",
     },
     handleSubmit: async (values) => {
-      console.log("SUBMIT", values);
 
       const token = await getAuthToken();
 
       const request: RequestInfo = new Request(
-        process.env.REACT_APP_API_URL + "/submit", //tested with mock api - getting CORS err for submit
+        process.env.REACT_APP_API_URL + "/submit", 
         {
           method: "POST",
           headers: {
