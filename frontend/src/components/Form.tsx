@@ -40,7 +40,6 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
       email: "",
     },
     handleSubmit: async (values) => {
-      console.log("SUBMIT", values);
 
       const token = await getAuthToken();
 

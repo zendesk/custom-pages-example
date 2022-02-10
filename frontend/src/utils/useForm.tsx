@@ -27,23 +27,6 @@ export interface UseFormProps {
   initialValues: Values;
 }
 
-/*
-{
-  email: {
-    required: true,
-    type: 'email',
-    message: 'Invalid email',
-  },
-  foo: {
-    required: true,
-    type: 'text',
-    message: 'Organization required',
-  }
-
-}
-
-*/
-
 const validateEmail = (email: string) => {
   var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
   return regex.test(email);
