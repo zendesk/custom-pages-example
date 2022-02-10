@@ -49,7 +49,7 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Basic " ,
+            Authorization: `Basic ${token}`,
           },
           body: JSON.stringify({
             name: values.name,
