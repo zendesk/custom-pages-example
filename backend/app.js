@@ -1,3 +1,17 @@
+// This is the backend component of the custom pages example app. The app receives a request
+// via the /submit route and completes the following workflow:
+// =========================================================
+// * Validate Data
+// * Create or Update organization
+// * If organization already exists, finds organization ID
+// * Create or update user
+// * Create organization membership
+// * Email user
+// ==========================================================
+// The app uses JWT to authorize client-side requests via the /authentication route. See auth.js
+// The app uses nodemailer to notify the user on successful submission. See mailer.js
+
+
 const express = require("express");
 const fetch = require("node-fetch");
 const validator = require("validator");
@@ -17,12 +31,16 @@ app.use(express.urlencoded({ extended: true }));
 // Adding CORS headers to response
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*");
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept, Authorization");
   next()
 });
 
+// Zendesk subdomain
 const subdomain = process.env.SUBDOMAIN;
+
+// Zendesk authorization credentials
 const encodedData = Buffer.from(`${process.env.USERNAME}/token:${process.env.TOKEN}`).toString("base64");
+
 const headers = {
       "Content-Type": "application/json",
       Authorization: `Basic ${encodedData}`
@@ -43,6 +61,7 @@ const findOrg = async (req, res) => {
   if (response.ok) {
     response.json().then(data => {
       console.log('Org found by name');
+      // Provides exact matched org name as search API includes non-specific results
       const matched_org = data.results.find(({name}) => name === req.body.organization);
       createOrUpdateUser(req, res, matched_org);
     });
@@ -166,6 +185,7 @@ app.post("/submit", auth.authenticateToken, (req, res) => {
   validateData(req, res);
 });
 
+// Authentication required before "/submit" request
 app.post("/authenticate", (req, res) => {
   // Return a JWT token to authorize requests
   auth.generateToken(req, res);

@@ -28,7 +28,8 @@ cd frontend
 ```
 npm install
 ```
-4. Run the app. 
+4. Copy the .env.example into .env and adjust as needed  
+5. Run the app. 
 ```
 npm start
 ```
@@ -36,6 +37,11 @@ npm start
 To run tests 
 ```
 npm test
+```
+
+To build
+```
+npm run build
 ```
 
 
