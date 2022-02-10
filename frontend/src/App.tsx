@@ -107,25 +107,25 @@ function App() {
       </div>
       <footer className="order-8 col-span-2 bg-[#050138]">
         <div className="flex flex-row place-content-center pt-8 gap-4 ">
-          <a href="https://www.facebook.com/zendesk/" target="_blank">
+          <a href="https://www.facebook.com/zendesk/" target="_blank" rel="noreferrer">
             <Facebook />
           </a>
 
           <a
             href="https://twitter.com/Zendesk?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <Twitter />
           </a>
 
           <a
             href="https://www.linkedin.com/company/zendesk/mycompany/verification/"
-            target="_blank"
+            target="_blank" rel="noreferrer"
           >
             <LinkedIn />
           </a>
 
-          <a href="https://github.com/zendesk" target="_blank">
+          <a href="https://github.com/zendesk" target="_blank" rel="noreferrer">
             <Github />
           </a>
         </div>
@@ -134,7 +134,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Contact
               </a>
@@ -142,7 +142,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 About Us
               </a>
@@ -150,7 +150,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Terms and Conditions
               </a>
@@ -160,7 +160,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Careers
               </a>
@@ -168,7 +168,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 Change Country
               </a>
@@ -176,7 +176,7 @@ function App() {
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
-                target="_blank"
+                target="_blank" rel="noreferrer"
               >
                 FAQ
               </a>
