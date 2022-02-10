@@ -45,12 +45,12 @@ function Form({setSubmitSuccess, submitSuccess, setSubmitFailure, submitFailure,
       const token = await getAuthToken();
 
       const request: RequestInfo = new Request(
-        process.env.REACT_APP_API_URL + "/submit", //tested with mock api - getting CORS err for submit
+        process.env.REACT_APP_API_URL + "/submit", 
         {
           method: "POST",
           headers: {
             "Content-Type": "application/json",
-            Authorization: "Basic " + token,
+            Authorization: "Basic " ,
           },
           body: JSON.stringify({
             name: values.name,
