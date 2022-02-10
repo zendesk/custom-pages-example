@@ -106,7 +106,7 @@ function App() {
         </div>
       </div>
       <footer className="order-8 col-span-2 bg-[#050138]">
-        <div className="flex flex-row place-content-center pt-8 gap-4 ">
+        <div className="flex flex-row place-content-center pt-8 gap-4 content-center">
           <a href="https://www.facebook.com/zendesk/" target="_blank" rel="noreferrer">
             <Facebook />
           </a>
@@ -129,8 +129,8 @@ function App() {
             <Github />
           </a>
         </div>
-        <div className="grid grid-cols-2 text-white text-xs font-mono pt-10 pb-10">
-          <div className="grid-rows-3 space-y-1 ml-10">
+        <div className="grid grid-cols-2 text-white text-xs font-mono pt-10 pb-10 place-items-center">
+          <div className="grid-rows-3 space-y-1 ml-10 ">
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
@@ -156,7 +156,7 @@ function App() {
               </a>
             </div>
           </div>
-          <div className="grid-rows-3 space-y-1 ml-10">
+          <div className="grid-rows-3 space-y-1">
             <div>
               <a
                 href="https://support.zendesk.com/hc/en-us/articles/4408843597850-Contacting-Zendesk-Customer-Support"
