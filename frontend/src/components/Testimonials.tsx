@@ -32,7 +32,7 @@ function Testimonials() {
           alt="Very pleased customer #3"
         />
         <p className="md:pr-5 pt-12 md:pt-3 md:px-6 font-mono text-sm text-center">
-          Help, I'm trapped in a circle and if I stop smiling they'll fire.
+          Help, I'm trapped in a circle and if I stop smiling they'll fire me.
         </p>
       </div>
     </div>
