@@ -183,23 +183,17 @@ const validateData = (req, res) => {
 	});
 
 	if (!checkedEmail) {
-		res
-			.status(400)
-			.send({
-				error: `Email ${req.body.email} is invalid. Please check your details and try again`,
-			});
+		res.status(400).send({
+			error: `Email ${req.body.email} is invalid. Please check your details and try again`,
+		});
 	} else if (!checkedName || !nameLength) {
-		res
-			.status(400)
-			.send({
-				error: `Name ${req.body.name} is invalid. Please check your details and try again`,
-			});
+		res.status(400).send({
+			error: `Name ${req.body.name} is invalid. Please check your details and try again`,
+		});
 	} else if (!checkedOrg) {
-		res
-			.status(400)
-			.send({
-				error: `Organization ${req.body.organization} is invalid. Please check your details and try again`,
-			});
+		res.status(400).send({
+			error: `Organization ${req.body.organization} is invalid. Please check your details and try again`,
+		});
 	} else {
 		// Proceed to create or update org on successful data validation
 		createOrUpdateOrg(req, res);
@@ -213,7 +207,7 @@ app.post("/submit", auth.authenticateToken, (req, res) => {
 
 // Authentication required before "/submit" request
 app.post("/authenticate", (req, res) => {
-	// Evaluates request origin and return a JWT token to authorize requests
+	// Evaluates request origin and returns a JWT token to authorize requests
 	req.headers.origin === `https://${process.env.SUBDOMAIN}.zendesk.com`
 		? auth.generateToken(req, res)
 		: res
