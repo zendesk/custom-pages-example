@@ -10,10 +10,10 @@
   "license": "ISC",
   "dependencies": {
     "dotenv": "^11.0.0",
-    "express": "^4.17.2",
-    "jsonwebtoken": "^8.5.1",
+    "express": "^4.19.2",
+    "jsonwebtoken": "^9.0.0",
     "node-fetch": "^2.6.7",
-    "nodemailer": "^6.7.2",
+    "nodemailer": "^6.9.9",
     "validator": "^13.7.0"
   }
 }
